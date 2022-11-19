@@ -2,19 +2,19 @@ import React from 'react';
 import { useState } from 'react';
 import { Button, Text, TextInput, View } from 'react-native';
 import { styles } from '../StyleSheet';
-import axios from 'axios';
+import { RootStackParamList } from '../App';
+import { StackScreenProps } from '@react-navigation/stack';
 
-export default function TestApp() {
+export type HomeScreenProps = StackScreenProps<RootStackParamList, 'Home'>;
+
+function TestApp({ navigation, route }: HomeScreenProps) {
   const [text, setText] = useState<string>('');
   const [arr, setArr] = useState<string[]>([]);
 
-  const TextHandler = (enteredText: string): void => {
+  const TextHandler = (enteredText: string) => {
     setText(enteredText);
   };
-
-  const AddText = (): void => {
-    setArr([...arr, text]);
-  };
+console.log(route)
   return (
     <View>
       <View style={styles.view}>
@@ -24,13 +24,12 @@ export default function TestApp() {
           placeholder="place holder"
           onChangeText={TextHandler}
         ></TextInput>
-        <Button title="add" onPress={AddText} />
-      </View>
-      <View>
-        {arr
-          ? arr.map((item) => <Text style={styles.item}>{item}</Text>)
-          : null}
+        <Button
+          title="Go Detail"
+          onPress={() => navigation.navigate('Detail', { id: 1 })}
+        />
       </View>
     </View>
   );
 }
+export default TestApp;

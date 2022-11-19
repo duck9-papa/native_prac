@@ -1,18 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { useState } from 'react';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
-import { styles } from './StyleSheet';
-import axios from 'axios';
 import { NavigationContainer } from '@react-navigation/native';
-import TestApp from './page/TestApp';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import TestApp from './page/TestApp';
+import TestDetail from './page/TestDetail';
+
+export type RootStackParamList = {
+  Home: undefined;
+  Detail:
+    | {
+        id: number;
+      }
+    | undefined;
+};
 
 export default function App() {
-  const stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator<RootStackParamList>();
   return (
     <NavigationContainer>
-      <TestApp />
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="Home"
+          component={TestApp}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Detail"
+          component={TestDetail}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
