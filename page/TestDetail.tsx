@@ -8,6 +8,6 @@ import { StackScreenProps } from '@react-navigation/stack';
 export type DetailScreenProps = StackScreenProps<RootStackParamList, 'Detail'>;
 
 export default function TestDetail({ navigation, route }: DetailScreenProps) {
-    console.log(navigation,route)
+    console.log(route)
   return <View>Detail</View>;
 }
