@@ -17,7 +17,8 @@ function TestApp({ navigation, route }: HomeScreenProps) {
   console.log(
     A.sort((a, b) => {
       return a - b;
-    })
+    }),
+
   );
   return (
     <View>
