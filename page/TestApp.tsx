@@ -10,16 +10,13 @@ export type HomeScreenProps = StackScreenProps<RootStackParamList, 'Home'>;
 function TestApp({ navigation, route }: HomeScreenProps) {
   const [text, setText] = useState<string>('');
   const [arr, setArr] = useState<string[]>([]);
-  let A = [1, 3, 6, 4, 1, 2];
   const TextHandler = (enteredText: string) => {
     setText(enteredText);
   };
-  console.log(
-    A.sort((a, b) => {
-      return a - b;
-    }),
 
-  );
+
+
+  ;
   return (
     <View>
       <View style={styles.view}>
