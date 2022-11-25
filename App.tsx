@@ -4,9 +4,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TestApp from './page/TestApp';
 import TestDetail from './page/TestDetail';
 import Timer from './page/Timer';
+import axios from 'axios';
+
+axios.get('http://localhost:3000/name').then((res) => console.log(res));
 
 export type RootStackParamList = {
-  Timer : {min:number,sec:number}
+  Timer: { min: number; sec: number };
   Home: undefined;
   Detail:
     | {
