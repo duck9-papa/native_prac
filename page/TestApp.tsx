@@ -8,30 +8,6 @@ import { StackScreenProps } from '@react-navigation/stack';
 export type HomeScreenProps = StackScreenProps<RootStackParamList, 'Home'>;
 
 function TestApp({ navigation, route }: HomeScreenProps) {
-  const [text, setText] = useState<string>('');
-  const [arr, setArr] = useState<string[]>([]);
-  const TextHandler = (enteredText: string) => {
-    setText(enteredText);
-  };
-
-
-
-  ;
-  return (
-    <View>
-      <View style={styles.view}>
-        <TextInput
-          value={text}
-          style={styles.textinput}
-          placeholder="place holder"
-          onChangeText={TextHandler}
-        ></TextInput>
-        <Button
-          title="Go Detail"
-          onPress={() => navigation.navigate('Detail', { id: 1 })}
-        />
-      </View>
-    </View>
-  );
+  return <View></View>;
 }
 export default TestApp;

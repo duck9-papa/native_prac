@@ -1,6 +1,11 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+  flexCenter:{
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center'
+  },
     container: {
       flex: 1,
       backgroundColor: '#fff',
@@ -24,5 +29,11 @@ export const styles = StyleSheet.create({
         backgroundColor:'gray',
         borderRadius:'10px',
         margin:'10px'
+    },
+    MainButton:{
+      width:'400px',
+      height:'250px',
+      borderRadius:'10px',
+      backgroundColor:'#00FFFF'
     }
   });
