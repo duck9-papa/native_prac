@@ -11,6 +11,7 @@ export type HomeScreenProps = StackScreenProps<RootStackParamList, 'Home'>;
 function TestApp({ navigation, route }: HomeScreenProps) {
   return <View style={styles.flexCenter} >
     <MainButton title={"미니게임"} navigation={navigation} route={route} />
+    <MainButton title={"날씨정보"} navigation={navigation} route={route} />
   </View>;
 }
 export default TestApp;
