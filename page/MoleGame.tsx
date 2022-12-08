@@ -1,12 +1,12 @@
 import React from 'react';
 import { styles } from '../StyleSheet';
-import { View } from 'react-native';
+import { View,Text } from 'react-native';
 
 const MoleGame = () => {
   return (
     <>
       <View style={styles.MoleBoard}>
-        <View></View>
+        <View><Text></Text></View>
         <View></View>
         <View></View>
         <View></View>
